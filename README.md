@@ -87,8 +87,8 @@ it('should show errors when validator condition not met', async () => {
 });
 ```
 
-
-***StateService*** Boiler plate state mangament super class for services that will be implementing state into them..
+### StateService.ts
+Boiler plate state mangament super class for services that will be implementing state into them. (Utilizes RxJs)
 
 #### Example
 
