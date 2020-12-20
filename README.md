@@ -42,9 +42,11 @@ This utility class is used to make writing tests easier, quicker, and more reusa
 describe('InputComponent', () => {
 const  options = {
 declarations: [InputComponent],
-imports:[MatFormFieldModule,
+imports:[
+		 MatFormFieldModule,
 		 MatInputModule,
-		 BrowserAnimationsModule]
+		 BrowserAnimationsModule
+     ]
 };
 
 const  util = new  TestUtil(InputComponent, options);
