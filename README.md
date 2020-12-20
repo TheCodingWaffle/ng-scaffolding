@@ -86,3 +86,61 @@ it('should show errors when validator condition not met', async () => {
 	expect(util.component.formControl.valid).toBeFalse();
 });
 ```
+
+
+***StateService*** Boiler plate state mangament super class for services that will be implementing state into them..
+
+#### Example
+
+```javascript
+// Extends StateService and Passing State Interface in 
+export class UserService extends StateService<UsesrState> {
+  // Set all observables	
+  permissions$ = this.state$.pipe(
+    map((state) => state.permissions),
+    distinctUntilChanged()
+  );
+
+  departments$ = this.state$.pipe(
+    map((state) => state.departments),
+    distinctUntilChanged()
+  );
+
+  currentStatus$ = this.state$.pipe(
+    map((state) => state.currentStatus),
+    distinctUntilChanged()
+  );
+
+
+  //Set the view model
+  constructor() {
+    super();
+    this.vm$ = combineLatest([
+      this.permissions$,
+      this.departments$,
+      this.currentStatus$,
+
+    ]).pipe(
+      map(([permissions,departments,currentStatus]) => {
+          return {permissions,departments,currentStatus};
+      })
+    );
+  }
+
+  // Update everything in service to keep state immutable
+  updateStatus = (newStatus: UserStatus) => {
+    this.updateState({
+      ...this.serviceState,
+      currentStatus
+    });
+  }
+
+}
+
+// Interface for your services state
+export interface UsesrState {
+  permissions: PermissionModel[];
+  departments: DepartmentModel[];
+  currentStatus: UserStatus;
+}
+```
