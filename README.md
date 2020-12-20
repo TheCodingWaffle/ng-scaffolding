@@ -43,9 +43,9 @@ describe('InputComponent', () => {
 const  options = {
 declarations: [InputComponent],
 imports:[
-		 MatFormFieldModule,
-		 MatInputModule,
-		 BrowserAnimationsModule
+   MatFormFieldModule,
+   MatInputModule,
+   BrowserAnimationsModule
      ]
 };
 
