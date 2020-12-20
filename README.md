@@ -1,3 +1,8 @@
+ng-scaffolding
+============================
+This is a scalable boiler plate Angular project to quickly *scaffold* a project and get coding. 
+
+
 Folder Structure Conventions
 ============================
 
@@ -29,7 +34,9 @@ Folder Structure Conventions
 	    shared.module.ts
     ├── styles 
 
-### TestUtil.ts
+TestUtil.ts
+============================
+
 This utility class is used to make writing tests easier, quicker, and more reusable. This is a glorified wrapper for the [@testing-library/angular](https://www.npmjs.com/package/@testing-library/angular). This library focuses on:
 
 > The more your tests resemble the way your software is used, the more confidence they can give you.
@@ -87,7 +94,9 @@ it('should show errors when validator condition not met', async () => {
 });
 ```
 
-### StateService.ts
+StateService.ts
+============================
+
 Boiler plate state mangament super class for services that will be implementing state into them. (Utilizes RxJs)
 
 #### Example
