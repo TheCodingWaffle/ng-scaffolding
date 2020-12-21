@@ -1,3 +1,4 @@
+![banner](http://www.thecodingwaffle.dev/images/banners/ng-scaffolding.png)
 ng-scaffolding
 ============================
 This is a scalable boiler plate Angular project to quickly *scaffold* a project and get coding. 
